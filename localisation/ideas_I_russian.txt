@@ -1,0 +1,3 @@
+l_russian:
+SQ3_five_years_plan_idea:0 "Пятилетний план"
+SQ3_five_years_plan_idea_desc:1 "Мы должны построить промышленность как можно быстрее"

@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = GFX_portrait_SQ3_Izhi
+		texturefile = gfx/leaders/SQ3/Portrait_Izhi.dds
+	}
+}

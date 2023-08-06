@@ -1,0 +1,1063 @@
+﻿focus_tree = {
+	id = 3otd
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SQ3
+		}
+	}
+	default = no
+	### ### ### #  # #  #  ##
+	# # # # #   #  # # #  #  #
+	##  # # ### #### ###  ####
+	# # # # #   #  # # #  #  #
+	### ### ### #  # #  # #  #
+	focus = {
+		id = SQ3_Reorganizacija
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10
+		x = 62
+		y = 0
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 100
+			navy_experience = 100
+			air_experience = 100
+	
+		}
+	}
+	focus = {
+		id = SQ3_Shkola_WWS
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Reorganizacija
+		}
+		x = 56
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SQ3_Shkola_WWS_idea
+		}
+
+	}
+	focus = {
+		id = SQ3_Otiechestwiennoe_Proizwodstwo
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Shkola_WWS
+		}
+		x = 56
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+				type = arms_factory
+				level = 2
+				}
+			}
+		}	
+	}
+	focus = {
+		id = SQ3_Projekt_Legkoj_Awiaciji
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Otiechestwiennoe_Proizwodstwo
+		}
+		mutually_exclusive = {
+			focus = SQ3_Projekt_Tiarzoloj_Awiaciji
+		}
+		x = 55
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				name = small_plane_buff
+				category = light_fighter
+				category = air_equipment
+			}
+		}
+	}
+	focus = {
+		id = SQ3_Projekt_Tiarzoloj_Awiaciji
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Otiechestwiennoe_Proizwodstwo
+		}
+		mutually_exclusive = {
+			focus = SQ3_Projekt_Legkoj_Awiaciji
+		}
+		x = 57
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				name = heavy_avia_buff
+				category = cat_strategic_bomber
+				category = cat_heavy_fighter
+				category = air_equipment
+			}
+		}
+	}
+	focus = {
+		id = SQ3_Aviabaza_Belgrada
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Projekt_Tiarzoloj_Awiaciji
+			focus = SQ3_Projekt_Legkoj_Awiaciji
+		}
+		x = 56
+		y = 4
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			107 = { 
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = SQ3_Podgotowka_Asow
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Aviabaza_Belgrada
+		}
+		x = 56
+		y = 5
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SQ3_Squad_Aviation_idea
+		}
+	}
+	focus = {
+		id = SQ3_Ass_Dani
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Podgotowka_Asow
+		}
+		mutually_exclusive = {
+			focus = SQ3_Ass_Metro
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ace = {
+				name = Dani
+				surname = Femboyevich
+				callsign = Bybilda
+				type = fighter_genius
+				is_female = no
+			}
+		}
+
+		x = 57
+		y = 6
+
+	}
+	focus = {
+		id = SQ3_Voennaja_Akademija_Belgrada
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Reorganizacija
+		}
+		x = 68
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SQ3_Voennaja_Akademija_Belgrada_old_idea
+		}
+	}
+	focus = {
+		id = SQ3_Zakup_za_Ruberzom
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Shkola_WWS
+		}
+		prerequisite = {
+			focus = SQ3_Voennaja_Akademija_Belgrada
+		}
+		x = 62
+		y = 2
+
+	}
+	focus = {
+		id = SQ3_Zakupka_Samoletow
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zakup_za_Ruberzom
+		}
+		x = 60
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_equipment_to_stockpile = { type = medium_plane_airframe_0 amount = 20 producer = GER }
+		}
+	}
+	focus = {
+		id = SQ3_Vengerskije_Istrebiteli
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zakupka_Samoletow
+		}
+		mutually_exclusive = {
+			focus = SQ3_Amerikanskije_Bombery
+		}
+		x = 59
+		y = 4
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SQ3_Vengerskije_Istrebiteli_idea
+			add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 100 producer = HUN }
+		}
+
+	}
+	focus = {
+		id = SQ3_Amerikanskije_Bombery
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zakupka_Samoletow
+		}
+		mutually_exclusive = {
+			focus = SQ3_Vengerskije_Istrebiteli
+		}
+		x = 61
+		y = 4
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_equipment_to_stockpile = { type = large_plane_airframe_0 amount = 20 producer = USA }
+		}
+	}
+	focus = {
+		id = SQ3_Zakupka_Techniki
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zakup_za_Ruberzom
+		}
+		x = 62
+		y = 5
+
+	}
+	focus = {
+		id = SQ3_Zakupka_Piechotki
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zakup_za_Ruberzom
+		}
+		x = 64
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 500 producer = ENG }
+		}
+	}
+	focus = {
+		id = SQ3_Italianskije_Vintowki
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zakupka_Piechotki
+		}
+		mutually_exclusive = {
+			focus = SQ3_Sovietskije_Vintowki
+		}
+		x = 63
+		y = 4
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SQ3_Italianskije_Vintowki_idea
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 producer = ITA }
+		}
+	}
+	focus = {
+		id = SQ3_Iaponski_Gruzowiki
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zakupka_Techniki
+		}
+		x = 63
+		y = 6
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 420 producer = JAP }
+		}
+
+	}
+	focus = {
+		id = SQ3_Sovietskije_Vintowki
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zakupka_Piechotki
+		}
+		mutually_exclusive = {
+			focus = SQ3_Italianskije_Vintowki
+		}
+		x = 65
+		y = 4
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SQ3_Sovietskije_Vintowki_idea
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 10000 producer = SOV }
+		}
+	}
+	focus = {
+		id = SQ3_Provesti_KMB
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Voennaja_Akademija_Belgrada
+		}
+		x = 67
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SQ3_Voennaja_Akademija_Belgrada_old_idea
+				add_idea = SQ3_Voennaja_Akademija_Belgrada_idea_1
+			}
+		}
+
+	}
+	focus = {
+		id = SQ3_Nowij_Prizyw
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = { focus = SQ3_Voennaja_Akademija_Belgrada }
+		prerequisite = { focus = SQ3_Provesti_KMB }
+		x = 69
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SQ3_Voennaja_Akademija_Belgrada_idea_1
+				add_idea = SQ3_Voennaja_Akademija_Belgrada_idea_2
+			}
+			add_manpower = 10000
+		}
+	}
+	focus = {
+		id = SQ3_Specializacija_3OTD
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Provesti_KMB
+		}
+		prerequisite = {
+			focus = SQ3_Nowij_Prizyw
+		}
+		x = 68
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SQ3_Voennaja_Akademija_Belgrada_idea_2
+				add_idea = SQ3_Voennaja_Akademija_Belgrada_idea_3
+			}
+		}
+
+	}
+	focus = {
+		id = SQ3_Razwitije_Wojenych_Technologij
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Specializacija_3OTD
+		}
+		x = 68
+		y = 4
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				name = militari_buff
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = {
+		id = SQ3_Motostrelkowoje_OTD
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Razwitije_Wojenych_Technologij
+		}
+		
+		x = 68
+		y = 5
+
+	}
+	focus = {
+		id = SQ3_Sviashenyje_Uchenija
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Motostrelkowoje_OTD
+		}
+		x = 67
+		y = 6
+
+	}
+	focus = {
+		id = SQ3_Cherterzy_Nowych_Tankow
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Motostrelkowoje_OTD
+		}
+		x = 67
+		y = 7
+
+	}
+	focus = {
+		id = SQ3_Nowij_BTR
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Motostrelkowoje_OTD
+		}
+		x = 69
+		y = 7
+
+	}
+	focus = {
+		id = SQ3_Tankowaja_Divizija_3OTD
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Cherterzy_Nowych_Tankow
+		}
+		prerequisite = {
+			focus = SQ3_Nowij_BTR
+		}
+		x = 68
+		y = 8
+
+	}
+	focus = {
+		id = SQ3_Ass_Metro
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Podgotowka_Asow
+		}
+		mutually_exclusive = {
+			focus = SQ3_Ass_Dani
+		}
+		x = 55
+		y = 6
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ace = {
+				name = Metro
+				callsign = Schizophrenic
+				type = support_genius
+				is_female = no
+			}
+		}
+	}
+	focus = {
+		id = SQ3_Francuzkije_Tanki
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zakupka_Techniki
+		}
+		x = 61
+		y = 6
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_equipment_to_stockpile = { type = light_tank_chassis_2 amount = 100 producer = FRA }
+		}
+
+	}
+	#### #### #### #   # # #  #
+	#  # #  # #  # ## ## ##  # #
+	#  # #### #  # # # # # # ###
+	#  # #    #### #   # # # # #
+	
+	focus = {
+		id = SQ3_Welikije_Plany 
+		icon = GFX_goal_unknown
+		cost = 10
+		x = 81
+		y = 0
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = SQ3_Welikije_Plany
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = SQ3_Piatiletka
+		
+		icon = GFX_goal_unknown
+		x = 81
+		y = 1
+		cost = 10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		
+		prerequisite = {
+			focus = SQ3_Welikije_Plany 
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = SQ3_five_years_plan_idea
+				days = 1825
+			}
+		}
+	}
+	
+	focus = {
+		id = SQ3_Restawracija_Zaawodow_u_Belgrada
+		
+		icon = GFX_goal_unknown
+		x = 78
+		y = 2
+		cost = 10
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			SQ3 = { controls_state = 107 }
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		
+		prerequisite = {
+			focus = SQ3_Piatiletka
+		}
+		completion_reward = {
+			107 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}	
+	focus = {
+		id = SQ3_Nowije_Predprijatia
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Piatiletka
+		}
+		x = 80
+		y = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SQ3_Ekonomicheskij_Bum
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Nowije_Predprijatia
+			focus = SQ3_Restawracija_Zaawodow_u_Belgrada
+		}
+		x = 79
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.2
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = SQ3_Nowyje_Dorogi
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Ekonomicheskij_Bum
+		}
+		x = 76
+		y = 4
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		
+		completion_reward = {
+			107 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}		
+	focus = {
+		id = SQ3_Inostranije_Eksperty
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Ekonomicheskij_Bum
+		}
+		x = 78
+		y = 4
+
+	}
+	focus = {
+		id = SQ3_Inowacija_w_Infrastrukture
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Inostranije_Eksperty
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SQ3_Inowacija_w_Infrastrukture_idea
+		}
+		x = 77
+		y = 5
+
+	}
+	focus = {
+		id = SQ3_Nowije_Investicii
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Inostranije_Eksperty
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		
+		completion_reward = {
+			add_offsite_building = { 
+				type = arms_factory
+				level = 1
+			}
+			add_offsite_building = { 
+				type = industrial_complex 
+				level = 1 
+			}
+		}
+		x = 79
+		y = 5
+
+	}
+	focus = {
+		id = SQ3_Zwezije_Umy
+		icon = GFX_goal_generic_scientific_exchange
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Ekonomicheskij_Bum
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+		x = 80
+		y = 4
+
+	}
+	focus = {
+		id = SQ3_Nowoje_Oborudowanie
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Inostranije_Eksperty
+			focus = SQ3_Zwezije_Umy
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+				add_ideas = SQ3_Nowoje_Oborudowanie_idea
+		}
+		x = 81
+		y = 5
+
+	}	
+	focus = {
+		id = SQ3_Wielikaja_Zastrojka
+		icon = GFX_goal_generic_soviet_construction
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Inowacija_w_Infrastrukture
+			focus = SQ3_Nowoje_Oborudowanie
+			focus = SQ3_Nowije_Investicii
+		}
+		x = 79
+		y = 7
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = SQ3_Wnutrieniaja_Promishlinost
+		icon = GFX_goal_generic_construction
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Piatiletka
+		}
+		
+		completion_reward = {
+			107 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		x = 83
+		y = 2
+
+	}
+	focus = {
+		id = SQ3_Spirtowaja_Programa
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Wnutrieniaja_Promishlinost
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SQ3_Spirtowaja_Programa_idea
+		}
+		x = 84
+		y = 3
+
+	}
+	focus = {
+		id = SQ3_Postroit_Pivzawod
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Spirtowaja_Programa
+		}
+		
+		completion_reward = {
+			107 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		x = 83
+		y = 4
+
+	}
+	focus = {
+		id = SQ3_Zarplata_Alkogolem
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Postroit_Pivzawod
+		}
+		x = 83
+		y = 5
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SQ3_Zarplata_alkogolem_idea
+			stability_factor = 0.05
+			war_support_factor = 0.1
+		}
+	}
+	focus = {
+		id = SQ3_Razwitije_Infrastruktury
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Nowyje_Dorogi
+		}
+		x = 76
+		y = 6
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+	
+		}
+
+	}
+	focus = {
+		id = SQ3_Pjano_no_Kachestwenno
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Zarplata_Alkogolem
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_idea = SQ3_Pjano_no_Kachestwenno_idea
+		}
+		
+		x = 84
+		y = 7
+
+	}
+	focus = {
+		id = SQ3_Czeskaja_Piwnaja_Kompanija
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = SQ3_Pjano_no_Kachestwenno
+		}
+		
+		available = {
+			9 = { is_owned_by = SQ3 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+				}
+			}
+		}
+		x = 84
+		y = 8
+
+	}
+}

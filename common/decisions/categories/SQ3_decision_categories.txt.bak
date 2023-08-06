@@ -1,0 +1,8 @@
+SQ3_buy_equipment_category = {
+	icon = OTT_solid_idea
+	picture = GFX_decision_cat_generic_mefo_bills
+	allowed = {
+		tag = SQ3
+	}
+	visible_when_empty = yes
+}

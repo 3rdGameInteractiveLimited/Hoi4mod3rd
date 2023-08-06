@@ -1,0 +1,87 @@
+characters = {
+	SQ3_Izhi = {
+		name = "Izhi"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_SQ3_Izhi
+				}
+			army = {
+				large = GFX_portrait_SQ3_Izhi
+			}
+		}
+		country_leader = {
+			ideology = despotism
+				traits = { 
+					Dictator
+					Great_Architect
+					Great_Survivor
+				}
+				expire = "1965.1.1"
+				desc = SQ3_Izhi_desc
+		}
+	}
+	
+	SQ3_Mozzwich = {
+		name = "Mozzwich"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_SQ3_Izhi
+				}
+			army = {
+				large = GFX_portrait_SQ3_Izhi
+			}
+		}
+		corps_commander = {
+			traits = { 
+				infantry_officer 
+				old_guard 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}
+
+	SQ3_Goose = {
+		name = "Goose"
+		portraits = {
+			army = {
+				large = GFX_portrait_SQ3_Izhi
+			}
+		}
+		corps_commander = {
+			traits = { 
+				infantry_officer 
+				old_guard 
+			}
+			skill = 3
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	
+	SQ3_Kamchan = {
+		name = "Kamchan"
+		portraits = {
+			army = {
+				large = GFX_portrait_SQ3_Izhi
+			}
+		}
+		corps_commander = {
+			traits = {
+				infantry_officer 
+				old_guard 
+				substance_abuser
+			}
+			skill = 1
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+}

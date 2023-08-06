@@ -1,0 +1,71 @@
+SQ3_buy_equipment_category = {
+	
+	buy_rifle = {
+		allowed = {
+			original_tag = SQ3
+			has_completed_focus = SQ3_Zakupka_Piechotki
+		}
+		visible = { has_completed_focus = SQ3_Zakupka_Piechotki }
+		days_remove = 60
+		cost = 100
+		complete_effect = {
+			if = {
+				limit = { has_completed_focus = SQ3_Italianskije_Vintowki }
+				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 producer = ITA }
+			}
+			if = {
+				limit = { has_completed_focus = SQ3_Sovietskije_Vintowki }
+				add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1000 producer = SOV }
+			}
+		}
+	}
+	buy_planes = {
+		allowed = {
+			original_tag = SQ3
+			has_completed_focus = SQ3_Zakupka_Samoletow
+		}
+		visible = { has_completed_focus = SQ3_Zakupka_Samoletow }
+		days_remove = 180
+		cost = 200
+		complete_effect = {
+			if = {
+				limit = { has_completed_focus = SQ3_Vengerskije_Istrebiteli }
+				add_equipment_to_stockpile = add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 100 producer = HUN }
+			}
+			if = {
+				limit = { has_completed_focus = SQ3_Amerikanskije_Bombery }
+				add_equipment_to_stockpile = { type = medium_plane_airframe_0 amount = 100 producer = USA }
+			}
+		}
+	}
+	buy_tanks = {
+		allowed = {
+			original_tag = SQ3
+			has_completed_focus = SQ3_Zakupka_Techniki
+		}
+		visible = { has_completed_focus = SQ3_Zakupka_Techniki }
+		days_remove = 180
+		cost = 200
+		complete_effect = {
+			if = {
+				limit = { has_completed_focus = SQ3_Francuzkije_Tanki }
+				add_equipment_to_stockpile = { type = light_tank_chassis_2 amount = 100 producer = FRA }
+			}
+		}
+	}
+	buy_cars = {
+		allowed = {
+			original_tag = SQ3
+			has_completed_focus = SQ3_Iaponski_Gruzowiki
+		}
+		visible = { has_completed_focus = SQ3_Iaponski_Gruzowiki }
+		days_remove = 60
+		cost = 100
+		complete_effect = {
+			if = {
+				limit = { has_completed_focus = SQ3_Iaponski_Gruzowiki }
+				add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 500 producer = JAP }
+			}
+		}
+	}
+}	
